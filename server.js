@@ -16,9 +16,14 @@ app.get('/store', function (req, res) {
     res.send('To jest sklep');
 });
 
-app.get('/first-template', function(req, res){
-    res.render('first-template');
+app.get('/', (req, res) => {
+  res.render('content');
 });
+
+app.get('/auth/google', function(req, res){
+    res.render('logged');
+});
+
 
 app.listen(3000);
 app.use(function (req, res, next) {
